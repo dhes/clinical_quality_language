@@ -513,9 +513,11 @@ abstract class BaseFhirTypeConverter implements FhirTypeConverter {
         String name = null;
         switch (precision) {
             case WEEK:
+                name = TemporalPrecisionEnum.DAY.name();
+                break;
             case HOUR:
             case MINUTE:
-                name = TemporalPrecisionEnum.DAY.name();
+                name = TemporalPrecisionEnum.MINUTE.name();
                 break;
             case MILLISECOND:
                 name = TemporalPrecisionEnum.MILLI.name();
