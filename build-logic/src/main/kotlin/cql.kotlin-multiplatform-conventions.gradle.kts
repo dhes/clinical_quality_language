@@ -55,6 +55,11 @@ kotlin {
     jvm()
 
     if (enableJsTargets) {
+        iosArm64()
+        iosSimulatorArm64()
+    }
+
+    if (enableJsTargets) {
         js {
             compilerOptions {
                 // Enable support for BigInt

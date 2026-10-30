@@ -158,5 +158,11 @@ abstract class LoadTestResourcesTask : DefaultTask() {
             .addTestResourceClassWithPreloadedResources()
             .build()
             .writeTo(getKotlinDirForSourceSet("wasmJsTest"))
+
+        // nativeTest/kotlin/TestResourcesNative.kt
+        FileSpec.builder(packageName, "${fileName}Native")
+            .addTestResourceClassWithPreloadedResources()
+            .build()
+            .writeTo(getKotlinDirForSourceSet("nativeTest"))
     }
 }

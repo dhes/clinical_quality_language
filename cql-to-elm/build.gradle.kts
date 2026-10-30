@@ -7,6 +7,10 @@ val loadTestResourcesTask = tasks.register<LoadTestResourcesTask>("loadTestResou
 
 tasks.withType<AbstractKotlinCompile<*>>().configureEach { dependsOn(loadTestResourcesTask) }
 
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinNativeCompile>().configureEach {
+    dependsOn(loadTestResourcesTask)
+}
+
 kotlin {
     js { outputModuleName = "cql-to-elm" }
 
